@@ -1,0 +1,17 @@
+sudo: required
+# Note: travis currently does not support listing more than one language so
+# this cheats and claims to only be cpp.  If they add multiple language
+# support, this should probably get updated to install steps and/or
+# rvm/gemfile/jdk/etc. entries rather than manually doing the work.
+language: cpp
+os:
+  - linux
+script:
+  - ./tests.sh $CONFIG
+env:
+  - CONFIG=cpp
+  - CONFIG=cpp_distcheck
+  - CONFIG=java_jdk7
+  - CONFIG=python
+notifications:
+  email: false
