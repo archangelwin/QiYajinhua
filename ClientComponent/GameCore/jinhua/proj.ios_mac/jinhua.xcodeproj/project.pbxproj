@@ -61,6 +61,8 @@
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
+		840BEDCA1F8430AD00900C2A /* libluacocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 846305871F842705002CD3FF /* libluacocos2d Mac.a */; };
+		840BEDCB1F8430E500900C2A /* libluacocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 846305871F842705002CD3FF /* libluacocos2d Mac.a */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -100,6 +102,48 @@
 			proxyType = 1;
 			remoteGlobalIDString = A07A4C241783777C0073F6A7;
 			remoteInfo = "cocos2dx iOS";
+		};
+		840BEDC61F842FED00900C2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 846305801F842705002CD3FF /* cocos2d_lua_bindings.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 15C1C255198748D200A46ACC;
+			remoteInfo = "libluacocos2d Mac";
+		};
+		840BEDC81F842FF700900C2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 846305801F842705002CD3FF /* cocos2d_lua_bindings.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 15EFA59E198B2DAA000C57D3;
+			remoteInfo = "libluacocos2d iOS";
+		};
+		8463057E1F842457002CD3FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 507B40FD1C31BDD30067B53E;
+			remoteInfo = "libcocos2d tvOS";
+		};
+		846305861F842705002CD3FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 846305801F842705002CD3FF /* cocos2d_lua_bindings.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 15C1C2CC198748D200A46ACC;
+			remoteInfo = "libluacocos2d Mac";
+		};
+		846305881F842705002CD3FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 846305801F842705002CD3FF /* cocos2d_lua_bindings.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 15EFA616198B2DAA000C57D3;
+			remoteInfo = "libluacocos2d iOS";
+		};
+		8463058A1F842705002CD3FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 846305801F842705002CD3FF /* cocos2d_lua_bindings.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 507B43531C31FA0C0067B53E;
+			remoteInfo = "libluacocos2d tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -156,6 +200,7 @@
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		846305801F842705002CD3FF /* cocos2d_lua_bindings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_lua_bindings.xcodeproj; path = "../cocos2d/cocos/scripting/lua-bindings/proj.ios_mac/cocos2d_lua_bindings.xcodeproj"; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -172,6 +217,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840BEDCB1F8430E500900C2A /* libluacocos2d Mac.a in Frameworks */,
 				294D0D641D0D56D500F7F5D4 /* CoreText.framework in Frameworks */,
 				ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */,
 				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
@@ -193,6 +239,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840BEDCA1F8430AD00900C2A /* libluacocos2d Mac.a in Frameworks */,
 				ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */,
 				1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */,
 				5087E76717EB910900C73F5D /* libz.dylib in Frameworks */,
@@ -240,6 +287,7 @@
 			children = (
 				1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */,
 				1AC6FB07180E9839004C840B /* libcocos2d iOS.a */,
+				8463057F1F842457002CD3FF /* libcocos2d tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -247,6 +295,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				846305801F842705002CD3FF /* cocos2d_lua_bindings.xcodeproj */,
 				46880B8319C43A87006E1F66 /* Classes */,
 				46880B7519C43A67006E1F66 /* Resources */,
 				1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */,
@@ -357,6 +406,16 @@
 			path = ios;
 			sourceTree = SOURCE_ROOT;
 		};
+		846305811F842705002CD3FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				846305871F842705002CD3FF /* libluacocos2d Mac.a */,
+				846305891F842705002CD3FF /* libluacocos2d iOS.a */,
+				8463058B1F842705002CD3FF /* libluacocos2d tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -364,13 +423,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "jinhua-mobile" */;
 			buildPhases = (
-				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				840BEDC91F842FF700900C2A /* PBXTargetDependency */,
 				1AC6FB25180E99E1004C840B /* PBXTargetDependency */,
 			);
 			name = "jinhua-mobile";
@@ -389,6 +449,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				840BEDC71F842FED00900C2A /* PBXTargetDependency */,
 				1AC6FB16180E9959004C840B /* PBXTargetDependency */,
 			);
 			name = "jinhua-desktop";
@@ -421,6 +482,10 @@
 					ProductGroup = 1AC6FAE6180E9839004C840B /* Products */;
 					ProjectRef = 1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */;
 				},
+				{
+					ProductGroup = 846305811F842705002CD3FF /* Products */;
+					ProjectRef = 846305801F842705002CD3FF /* cocos2d_lua_bindings.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -443,6 +508,34 @@
 			fileType = archive.ar;
 			path = "libcocos2d iOS.a";
 			remoteRef = 1AC6FB06180E9839004C840B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8463057F1F842457002CD3FF /* libcocos2d tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libcocos2d tvOS.a";
+			remoteRef = 8463057E1F842457002CD3FF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		846305871F842705002CD3FF /* libluacocos2d Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libluacocos2d Mac.a";
+			remoteRef = 846305861F842705002CD3FF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		846305891F842705002CD3FF /* libluacocos2d iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libluacocos2d iOS.a";
+			remoteRef = 846305881F842705002CD3FF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8463058B1F842705002CD3FF /* libluacocos2d tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libluacocos2d tvOS.a";
+			remoteRef = 8463058A1F842705002CD3FF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -529,6 +622,16 @@
 			name = "cocos2dx iOS";
 			targetProxy = 1AC6FB24180E99E1004C840B /* PBXContainerItemProxy */;
 		};
+		840BEDC71F842FED00900C2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libluacocos2d Mac";
+			targetProxy = 840BEDC61F842FED00900C2A /* PBXContainerItemProxy */;
+		};
+		840BEDC91F842FF700900C2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libluacocos2d iOS";
+			targetProxy = 840BEDC81F842FF700900C2A /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -560,7 +663,7 @@
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
+				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END) $(SRCROOT)/../cocos2d/external/lua/lua $(SRCROOT)/../cocos2d/cocos/scripting/lua-bindings/auto $(SRCROOT)/../cocos2d/cocos/scripting/lua-bindings/manual $(SRCROOT)/../cocos2d/external/lua/luajit/include $(SRCROOT)/../cocos2d/external/lua/tolua";
 				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
@@ -592,7 +695,7 @@
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
+				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END) $(SRCROOT)/../cocos2d/external/lua/lua $(SRCROOT)/../cocos2d/cocos/scripting/lua-bindings/auto $(SRCROOT)/../cocos2d/cocos/scripting/lua-bindings/manual $(SRCROOT)/../cocos2d/external/lua/luajit/include $(SRCROOT)/../cocos2d/external/lua/tolua";
 				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
@@ -619,12 +722,12 @@
 					"$(SRCROOT)/../cocos2d/external/glfw3/include/mac",
 				);
 				INFOPLIST_FILE = mac/Info.plist;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../cocos2d/external/lua/tolua";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
 				);
-				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_MAC_BEGIN) $(_COCOS_HEADER_MAC_END)";
+				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_MAC_BEGIN) $(_COCOS_HEADER_MAC_END) $(SRCROOT)/../cocos2d/external/lua/lua $(SRCROOT)/../cocos2d/cocos/scripting/lua-bindings/auto $(SRCROOT)/../cocos2d/cocos/scripting/lua-bindings/manual $(SRCROOT)/../cocos2d/external/lua/luajit/include $(SRCROOT)/../cocos2d/external/lua/tolua";
 			};
 			name = Debug;
 		};
@@ -649,12 +752,12 @@
 					"$(SRCROOT)/../cocos2d/external/glfw3/include/mac",
 				);
 				INFOPLIST_FILE = mac/Info.plist;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../cocos2d/external/lua/tolua";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
 				);
-				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_MAC_BEGIN) $(_COCOS_HEADER_MAC_END)";
+				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_MAC_BEGIN) $(_COCOS_HEADER_MAC_END) $(SRCROOT)/../cocos2d/external/lua/lua $(SRCROOT)/../cocos2d/cocos/scripting/lua-bindings/auto $(SRCROOT)/../cocos2d/cocos/scripting/lua-bindings/manual $(SRCROOT)/../cocos2d/external/lua/luajit/include $(SRCROOT)/../cocos2d/external/lua/tolua";
 			};
 			name = Release;
 		};

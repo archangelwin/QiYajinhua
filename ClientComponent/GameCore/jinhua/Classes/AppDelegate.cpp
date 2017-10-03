@@ -16,7 +16,7 @@ using namespace cocos2d::experimental;
 #include "audio/include/SimpleAudioEngine.h"
 using namespace CocosDenshion;
 #endif
-
+#include "lua.h"
 USING_NS_CC;
 
 static cocos2d::Size designResolutionSize = cocos2d::Size(480, 320);
