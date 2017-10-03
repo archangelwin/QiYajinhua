@@ -1,6 +1,8 @@
 # Prerequisites
 *.d
 
+# ignore path
+
 # Compiled Object files
 *.slo
 *.lo
@@ -30,3 +32,17 @@
 *.exe
 *.out
 *.app
+*.db
+*.opendb
+/ClientComponent/GameCore/jinhua/proj.win32/.vs/jinhua/v14
+/ClientComponent/GameCore/jinhua/proj.win32/Debug.win32
+/ServerComponent/Core/.vs/Core/v14
+*.cache
+*.log
+/ClientComponent/GameCore/jinhua/cocos2d/cocos/2d/Debug.win32/libcocos2d.tlog
+/ClientComponent/GameCore/jinhua/cocos2d/cocos/editor-support/spine/proj.win32/Debug.win32/libSpine.tlog
+*.idb
+*.pdb
+/ClientComponent/GameCore/jinhua/cocos2d/external/recast/proj.win32/Debug.win32/librecast.tlog
+/ClientComponent/GameCore/jinhua/cocos2d/external/bullet/proj.win32/Debug.win32/libbullet.tlog
+/ClientComponent/GameCore/jinhua/cocos2d/external/Box2D/proj.win32/Debug.win32/libbox2d.tlog

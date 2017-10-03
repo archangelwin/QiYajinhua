@@ -4,7 +4,7 @@ namespace Core
 
 	Tcp_Connection::pointer Tcp_Connection::Create(boost::asio::io_service& io_service)
 	{
-
+		return pointer(new Tcp_Connection(io_service));
 	}
 
 	tcp::socket & Tcp_Connection::Sokcet()
@@ -18,7 +18,7 @@ namespace Core
 
 	}
 
-	SocketItem::SocketItem(Tcp_Connection *tcp_connection,int index):
+	SocketItem::SocketItem(Tcp_Connection::pointer tcp_connection,int index):
 		tcp_connection_(tcp_connection),
 		connecttime_(0),
 		index_(index),
@@ -29,7 +29,7 @@ namespace Core
 
 	void SocketItem::Close()
 	{
-
+		tcp_connection_->Sokcet().close();
 	}
 
 	boost::asio::ip::address SocketItem::GetClientAddress()

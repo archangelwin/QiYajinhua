@@ -3,7 +3,6 @@
 #include <boost/shared_ptr.hpp>
 #include <boost/bind.hpp>
 #include <boost/asio.hpp>
-#include <boost/asi>
 using boost::asio::ip::tcp;
 namespace Core
 {
@@ -23,7 +22,7 @@ namespace Core
 	class SocketItem
 	{
 	public:
-		SocketItem(Tcp_Connection *tcp_connection,int index);
+		SocketItem(Tcp_Connection::pointer tcp_connection,int index);
 		void Close();
 		boost::asio::ip::address GetClientAddress();
 		long GetConnectTime();
@@ -33,7 +32,7 @@ namespace Core
 		void SendData();
 		~SocketItem();
 	private:
-		Tcp_Connection *tcp_connection_;
+		Tcp_Connection::pointer tcp_connection_;
 		long connecttime_;
 		int index_;
 		bool isConnect_;
