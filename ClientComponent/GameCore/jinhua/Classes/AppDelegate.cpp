@@ -53,7 +53,11 @@ static int register_all_packages()
 {
     return 0; //flag for packages manager
 }
-
+int testlua(lua_State *L)
+{
+	cocos2d::log("Log : %s", lua_tostring(L, 1));
+	return 1;
+}
 bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
     auto director = Director::getInstance();
@@ -66,7 +70,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 #endif
         director->setOpenGLView(glview);
     }
-
+	
     // turn on display FPS
     director->setDisplayStats(true);
 
@@ -100,17 +104,24 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // run
     director->runWithScene(scene);
 
+	LuaStack* stack = LuaEngine::getInstance()->getLuaStack();
+	lua_State *L = stack->getLuaState();
+	lua_register(L, "testlua", testlua);
+
 	auto engine = LuaEngine::getInstance();
+	 
 	ScriptEngineManager::getInstance()->setScriptEngine(engine);
-	lua_State* L = engine->getLuaStack()->getLuaState();
+//	lua_State* L = engine->getLuaStack()->getLuaState();
 	lua_module_register(L);
 
 	register_all_packages();
 
-	LuaStack* stack = engine->getLuaStack();
+ 
+
+	//LuaStack* stack = engine->getLuaStack();
 	stack->setXXTEAKeyAndSign("2dxLua", strlen("2dxLua"), "XXTEA", strlen("XXTEA"));
 
-	if (engine->executeScriptFile("lua\\test.lua"))
+	if (engine->executeScriptFile("lua/test.lua"))
 	{
 		return false;
 	}

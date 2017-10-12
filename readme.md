@@ -7,4 +7,5 @@ ServerComponent				服务器组件
 
 服务器框架使用Boost 1.62,编译参考http://www.cnblogs.com/oloroso/p/6050596.html. 编译完成后把生成的目录添加到系统环境变量,命名为 BOOST_ROOT.
 
-数据库使用MYSQL 5.7.19 win x64,
+数据库使用MYSQL 5.7.19 win x64,配置好以后添加MYSQL根目录到环境变量,命名为MYSQL_ROOT.
+

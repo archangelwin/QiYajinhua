@@ -15,12 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="AsyncServer.h.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="TimeServer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -39,12 +33,33 @@
     <ClCompile Include="TcpConnection.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="AsyncServer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseModle.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HttpRequest_Parser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HttpReply.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GlobalDefine.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Log.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="BaseServer.h">
@@ -70,6 +85,33 @@
     </ClInclude>
     <ClInclude Include="TcpConnection.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseModle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HttpHeader.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HttpRequest.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HttpRequest_Parser.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HttpReply.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Tool.hpp">
+      <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

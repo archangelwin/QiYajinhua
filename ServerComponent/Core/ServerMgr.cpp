@@ -1,44 +1,48 @@
+
+#include "AsyncServer.h"
+#include "DataBaseServer.h"
+#include "TcpServer.h"
+#include "TimeServer.h"
 #include "ServerMgr.h"
-namespace Core
+
+ServerMgr *ServerMgr::instance_ = nullptr;
+
+ServerMgr::ServerMgr()
 {
-	ServerMgr *ServerMgr::instance_ = nullptr;
-
-	ServerMgr::ServerMgr()
-	{
-
-	}
-
-	ServerMgr::~ServerMgr()
-	{
-
-	}
-
-	ServerMgr * ServerMgr::GetInstance()
-	{
-		if (instance_ == nullptr)
-		{
-			instance_ = new ServerMgr;
-		}
-		return instance_;
-	}
-
-	AsyncServer * ServerMgr::GetAsyncServer()
-	{
-		return nullptr;
-	}
-
-	DataBaseServer * ServerMgr::GetDataBaseServer()
-	{
-		return nullptr;
-	}
-
-	TcpServer * ServerMgr::GetTcpServer()
-	{
-		return nullptr;
-	}
-
-	TimeServer * ServerMgr::GetTimeServer()
-	{
-		return nullptr;
-	}
+	asyncserver_ = new AsyncServer;
 }
+
+ServerMgr::~ServerMgr()
+{
+
+}
+
+ServerMgr * ServerMgr::GetInstance()
+{
+	if (instance_ == nullptr)
+	{
+		instance_ = new ServerMgr;
+	}
+	return instance_;
+}
+
+AsyncServer * ServerMgr::GetAsyncServer()
+{
+	return asyncserver_;
+}
+
+DataBaseServer * ServerMgr::GetDataBaseServer()
+{
+	return databaseserver_;
+}
+
+TcpServer * ServerMgr::GetTcpServer()
+{
+	return tcpserver_;
+}
+
+TimeServer * ServerMgr::GetTimeServer()
+{
+	return timeserver_;
+}
+

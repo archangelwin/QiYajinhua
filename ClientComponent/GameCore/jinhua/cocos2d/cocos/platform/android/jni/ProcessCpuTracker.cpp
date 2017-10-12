@@ -9,7 +9,7 @@
 #include <time.h>
 #include <fcntl.h>
 #include <sstream>
-
+#include <unistd.h>
 #ifdef ANDROID
 #define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, "ProcessCpuTracker", __VA_ARGS__)
 #else

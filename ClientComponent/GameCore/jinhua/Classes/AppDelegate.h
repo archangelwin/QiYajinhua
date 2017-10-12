@@ -36,5 +36,6 @@ public:
     virtual void applicationWillEnterForeground();
 };
 
+int testlua(lua_State *L);
 #endif // _APP_DELEGATE_H_
 
