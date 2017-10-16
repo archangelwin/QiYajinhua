@@ -2,7 +2,7 @@
 #define  _APP_DELEGATE_H_
 
 #include "cocos2d.h"
-
+#include "ExternFunc.h"
 /**
 @brief    The cocos2d Application.
 
@@ -37,5 +37,6 @@ public:
 };
 
 int testlua(lua_State *L);
+int luaWxLogin(lua_State *L);
 #endif // _APP_DELEGATE_H_
 

@@ -51,3 +51,5 @@
 /ServerComponent/RoomServer/.vs/RoomServer/v14
 /ServerComponent/RoomServer/x64/Release
 /ClientComponent/GameCore/jinhua/proj.android-studio/.idea
+/ClientComponent/GameCore/jinhua/cocos2d/cocos/platform/android/libcocos2dx/build
+/ClientComponent/GameCore/jinhua/cocos2d/cocos/platform/android/libcocos2dx

@@ -23,7 +23,25 @@ THE SOFTWARE.
 ****************************************************************************/
 package org.cocos2dx.cpp;
 
+import android.content.Context;
+import android.util.Log;
+import com.tencent.mm.opensdk.modelmsg.SendAuth;
 import org.cocos2dx.lib.Cocos2dxActivity;
-
+import com.tencent.mm.opensdk.openapi.*;
 public class AppActivity extends Cocos2dxActivity {
+
+  //  private  static IWXAPI api;
+
+    static void WxLogin()
+    {
+        IWXAPI api;
+        Context context=getContext();
+        api = WXAPIFactory.createWXAPI(context, null);
+        api.registerApp("testst");
+        final SendAuth.Req req = new SendAuth.Req();
+        req.scope = "snsapi_userinfo";
+        req.state = "wechat_sdk_demo_test";
+        api.sendReq(req);
+
+    }
 }

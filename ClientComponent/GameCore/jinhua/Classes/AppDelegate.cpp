@@ -1,5 +1,5 @@
 #include "AppDelegate.h"
-#include "HelloWorldScene.h"
+#include "ExternFunc.h"
 #include "scripting/lua-bindings/manual/CCLuaEngine.h"
 #include "scripting/lua-bindings/manual/lua_module_register.h"
 // #define USE_AUDIO_ENGINE 1
@@ -58,6 +58,11 @@ int testlua(lua_State *L)
 	cocos2d::log("Log : %s", lua_tostring(L, 1));
 	return 1;
 }
+int luaWxLogin(lua_State *L)
+{
+	WxLogin();
+	return 1;
+}
 bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
     auto director = Director::getInstance();
@@ -99,15 +104,15 @@ bool AppDelegate::applicationDidFinishLaunching() {
     register_all_packages();
 
     // create a scene. it's an autorelease object
-    auto scene = HelloWorld::createScene();
+    //auto scene = HelloWorld::createScene();
 
     // run
-    director->runWithScene(scene);
+    //director->runWithScene(scene);
 
 	LuaStack* stack = LuaEngine::getInstance()->getLuaStack();
 	lua_State *L = stack->getLuaState();
 	lua_register(L, "testlua", testlua);
-
+	lua_register(L, "luaWxLogin", luaWxLogin);
 	auto engine = LuaEngine::getInstance();
 	 
 	ScriptEngineManager::getInstance()->setScriptEngine(engine);

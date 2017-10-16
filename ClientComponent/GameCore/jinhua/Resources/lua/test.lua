@@ -41,7 +41,7 @@ local function main()
 
     end
 
-	testlua("tesss")
+	luaWxLogin()
     local scene = display.newScene("test")
     scene:addChild(createLayerMap())
     display.runScene(scene, nil, nil, nil)
