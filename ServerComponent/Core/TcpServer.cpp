@@ -23,8 +23,15 @@ void TcpServer::Run()
 		throw("TcpObserver is run");
 		return;
 	}
-	acceptor_ = new TCP::acceptor(ServerMgr::GetInstance()->GetAsyncServer()->GetIOService(),TCP::endpoint(TCP::v4(), Port_));
-	this->StartAcceptor();
+	try
+	{
+		acceptor_ = new TCP::acceptor(ServerMgr::GetInstance()->GetAsyncServer()->GetIOService(), TCP::endpoint(TCP::v4(), Port_));
+		this->StartAcceptor();
+	}catch(boost::system::error_code ec)
+	{
+		std::string err = ec.message();
+		throw(err);
+	}
 }
 
 void TcpServer::Stop()

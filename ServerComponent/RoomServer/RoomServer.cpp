@@ -56,14 +56,24 @@ namespace Applications
 	{
 		auto items= TcpServer_->GetSocketItem(SockIndex);
 		auto target = reply::stock_reply(reply::status_type::not_found).to_buffers();
-
+		if(Data.method=="GET")
+		{
+			
+		}
+		else if(Data.method=="POST")
+		{
+			
+		}
+		else
+		{
+			
+		}
 		Json::Reader reader;
 		Json::Value root;
 		
 		if (reader.parse(json.c_str(), root,false))
 		{
 			std::string MSG = root["MSG"].asString();
-
 			std::string SUBCMD = root["SUBCMD"].asString();
 			std::string DATA = root["DATA"].asString();
 		}

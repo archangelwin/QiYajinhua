@@ -12,5 +12,5 @@ namespace CoreGlobalDefine
 	const std::string USERINFO_DB = "userinfodb";
 	const unsigned long SQL_PORT = 3306;
 	const unsigned long DB_THREADPOOL = 2;
-	const unsigned short ROOM_SERVER_PORT = 8080;
+	const unsigned short ROOM_SERVER_PORT = 9090;
 }

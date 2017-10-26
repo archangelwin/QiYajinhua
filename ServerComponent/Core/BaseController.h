@@ -13,7 +13,7 @@ public:
 	void OnSocketRead(int SockIndex, char *pData) override;
 	void OnSocketClose(int SockIndex) override;
 	void OnHttpAccept(int SockIndex, request Data, std::string json) override;
-	~BaseControll();
+	virtual ~BaseControll();
 private:
 	BaseView *BaseView_;
 };
