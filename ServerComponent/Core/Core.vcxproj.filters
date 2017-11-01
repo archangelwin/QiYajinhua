@@ -57,6 +57,9 @@
     <ClCompile Include="HttpReply.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="MsgFunction.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GlobalDefine.h">
@@ -112,6 +115,9 @@
     </ClInclude>
     <ClInclude Include="Tool.hpp">
       <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgFunction.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

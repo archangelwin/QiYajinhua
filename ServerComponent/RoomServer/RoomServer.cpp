@@ -59,10 +59,13 @@ namespace Applications
 		auto items= TcpServer_->GetSocketItem(SockIndex);
 		if(Data.method=="GET")
 		{
-				std::string url=Data.url;
+				std::string url=Data.uri;
 				auto ok=reply::stock_reply(reply::status_type::ok).to_buffers();
-				items->SendData(ok);
-				items->GetPoint()->Sokcet().shutdown(boost::asio::ip::tcp::socket::shutdown_both,ignored_ec);
+				//items->SendData(ok.data());
+				items->GetPoint()->Sokcet().write_some(ok);
+				items->GetPoint()->Sokcet().shutdown(
+					boost::asio::ip::tcp::socket::shutdown_both,
+					boost::system::error_code());
 		}
 		else if(Data.method=="POST")
 		{
@@ -71,14 +74,15 @@ namespace Applications
 
 			if (reader.parse(json.c_str(), root,false))
 			{
-				std::string MSG = root["MSG"].asString();
-				std::string SUBCMD = root["SUBCMD"].asString();
-				std::string DATA = root["DATA"].asString();
-				int n = MSGCALLFUNC(MSG,DATA,SockIndex);
+				std::string msg = root["MSG"].asString();
+				std::string subcmd = root["SUBCMD"].asString();
+				std::string data = root["DATA"].asString();
+				 
+				const int n = MsgFunction::CallFunc(msg, data, SockIndex);
 				if(n!=0)
 				{
-					auto not_found = reply::stock_reply(reply::status_type::not_found).to_buffers();
-					items->SendData(not_found);
+					const auto not_found = reply::stock_reply(reply::status_type::not_found).to_buffers();
+					items->GetPoint()->Sokcet().write_some(not_found);
 				}
 			}
 

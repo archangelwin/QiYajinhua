@@ -66,6 +66,7 @@
     <ClCompile Include="HttpReply.cpp" />
     <ClCompile Include="HttpRequest_Parser.cpp" />
     <ClCompile Include="Log.cpp" />
+    <ClCompile Include="MsgFunction.cpp" />
     <ClCompile Include="ServerMgr.cpp" />
     <ClCompile Include="TcpConnection.cpp" />
     <ClCompile Include="TcpServer.cpp" />
@@ -86,6 +87,7 @@
     <ClInclude Include="HttpRequest.hpp" />
     <ClInclude Include="HttpRequest_Parser.hpp" />
     <ClInclude Include="Log.h" />
+    <ClInclude Include="MsgFunction.h" />
     <ClInclude Include="ServerMgr.h" />
     <ClInclude Include="TcpConnection.h" />
     <ClInclude Include="TcpServer.h" />
