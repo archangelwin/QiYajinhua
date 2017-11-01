@@ -64,6 +64,10 @@ namespace Applications
 		{
 			
 		}
+		else if(Data.method=="CONNECT")
+		{
+			
+		}
 		else
 		{
 			
