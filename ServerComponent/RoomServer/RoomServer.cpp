@@ -6,6 +6,7 @@
 #include "AsyncServer.h"
 #include <iostream>
 #include "HttpReply.hpp"
+#include "MsgFunction.h"
 #include <json/json.h>
 
 namespace Applications
@@ -15,6 +16,7 @@ namespace Applications
 		RoomController(nullptr)
 	{
 		TcpServer_ = new TcpServer(CoreGlobalDefine::ROOM_SERVER_PORT);
+
 	}
 
 	void RoomServer::Run()
@@ -39,7 +41,7 @@ namespace Applications
 	{
 		auto items = TcpServer_->GetSocketItem(SockIndex);
 		std::cout << items->GetClientAddress().to_string()<<std::endl;
-	//	items->SendData("GET \/ HTTP/1.1\nHost: 192.168.1.18 : 8080\nAccept : */*\n Accept-Encoding: identity\n<html><body><h1>我的第一个标题</h1><p>我的第一个段落</p></body></html>");
+	//	items->SendData("GET \/ HTTP/1.1\nHost: 192.168.1.18 : 8080\nAccept : */*\n Accept-Encoding: identity\n<html><body><h1>锟揭的碉拷一锟斤拷锟斤拷锟斤拷</h1><p>锟揭的碉拷一锟斤拷锟斤拷锟斤拷</p></body></html>");
 	}
 
 	void RoomServer::OnSocketRead(int SockIndex, char *pData)
@@ -55,32 +57,39 @@ namespace Applications
 	void RoomServer::OnHttpAccept(int SockIndex, request Data,std::string json)
 	{
 		auto items= TcpServer_->GetSocketItem(SockIndex);
-		auto target = reply::stock_reply(reply::status_type::not_found).to_buffers();
 		if(Data.method=="GET")
 		{
-			
+				std::string url=Data.url;
+				auto ok=reply::stock_reply(reply::status_type::ok).to_buffers();
+				items->SendData(ok);
+				items->GetPoint()->Sokcet().shutdown(boost::asio::ip::tcp::socket::shutdown_both,ignored_ec);
 		}
 		else if(Data.method=="POST")
 		{
-			
+			Json::Reader reader;
+			Json::Value root;
+
+			if (reader.parse(json.c_str(), root,false))
+			{
+				std::string MSG = root["MSG"].asString();
+				std::string SUBCMD = root["SUBCMD"].asString();
+				std::string DATA = root["DATA"].asString();
+				int n = MSGCALLFUNC(MSG,DATA,SockIndex);
+				if(n!=0)
+				{
+					auto not_found = reply::stock_reply(reply::status_type::not_found).to_buffers();
+					items->SendData(not_found);
+				}
+			}
+
 		}
 		else
 		{
-			
+
 		}
-		Json::Reader reader;
-		Json::Value root;
-		
-		if (reader.parse(json.c_str(), root,false))
-		{
-			std::string MSG = root["MSG"].asString();
-			std::string SUBCMD = root["SUBCMD"].asString();
-			std::string DATA = root["DATA"].asString();
-		}
-		items->SendData("HTTP/1.0 200 OK\r\n\r\n{\"index\":\"test\"}");
-		boost::system::error_code ignored_ec;
-		items->GetPoint()->Sokcet().shutdown(boost::asio::ip::tcp::socket::shutdown_both,
-			ignored_ec);
+
+
+
 	}
 
 	RoomServer::~RoomServer()
