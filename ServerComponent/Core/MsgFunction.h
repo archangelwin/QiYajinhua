@@ -9,11 +9,13 @@
 class MsgFunction
 {
 public:
-  MsgFunction()=delete;
-  static int CallFunc(std::string Func,std::string MsgData,int ItemID);
-  static void AddFunc(std::function<void(void)> Func,std::string FuncName);
+  typedef void(*Function)(std::string MsgData, int ItemID);
+  int CallFunc(std::string Func,std::string MsgData,int ItemID);
+  void AddFunc(std::string FuncName, Function Func);
+  static MsgFunction* GetInstance();
 private:
-  static  std::map<std::string,std::function<void(void)>> m_FuncMap;
+  std::map<std::string, Function> m_FuncMap;
+  static  MsgFunction *m_instance;
 };
  
 //#define MSGREGISTER(MSG) MsgFunction::AddFunc(MSG,#MSG)

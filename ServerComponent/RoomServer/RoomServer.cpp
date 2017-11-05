@@ -78,7 +78,7 @@ namespace Applications
 				std::string subcmd = root["SUBCMD"].asString();
 				std::string data = root["DATA"].asString();
 				 
-				const int n = MsgFunction::CallFunc(msg, data, SockIndex);
+				const int n = MsgFunction::GetInstance()->CallFunc(msg,data, SockIndex);
 				if(n!=0)
 				{
 					const auto not_found = reply::stock_reply(reply::status_type::not_found).to_buffers();
