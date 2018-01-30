@@ -31,8 +31,10 @@ local function main()
 		LoginBtn:setTitleText("WxLogin")
 		LoginBtn:setPosition(cc.p(WinSize.width/2,WinSize.height/2))
 		
-		local function Login(ref,msgtype)
-			
+        local function Login(ref,msgtype)
+            if msgtype==TOUCH_EVENT_ENDED then
+            print("Login Click!")
+            end
 		end
 		LoginBtn:addTouchEventListener(Login)
 		layerWroldMap:addChild(LoginBtn)
@@ -46,24 +48,26 @@ local function main()
     scene:addChild(createLayerMap())
     display.runScene(scene, nil, nil, nil)
 	 
---	local host="192.168.1.18"
---	local port=8080
---	local c=socket.connect(host,port)
---	c:send("hello server")
+	local host="127.0.0.1"
+	local port=9090
+	local c=socket.connect(host,port)
+	c:send("hello server")
  
-	--c:send("i'm cocos client")
- --  local xhr = cc.XMLHttpRequest:new()
---	xhr.responseType = cc.XMLHTTPREQUEST_RESPONSE_ARRAY_BUFFER 
---	xhr:open("GET", "192.168.1.18:8080")
---	xhr:setRequestHeader("Content-Type", "application/json")
---	local function onReadyStateChange()  
---	local ll   = xhr.response -- 获得返回数据  
---	print("response:"..ll)
- --   end  
---	xhr:registerScriptHandler(onReadyStateChange)
-  --  xhr:send()
---xhr:send(json.encode(par))
-   -- cc.Director:getInstance():getRunningScene():addChild(createLayerMap(),3,1)
+	c:send("i'm cocos client")
+    local xhr = cc.XMLHttpRequest:new()
+	xhr.responseType = cc.XMLHTTPREQUEST_RESPONSE_ARRAY_BUFFER 
+	xhr:open("GET", "127.0.0.1:9090")
+	xhr:setRequestHeader("Content-Type", "application/json")
+	local function onReadyStateChange()  
+	    local ll = xhr.response -- 获得返回数据  
+        for k,v in pairs(ll) do
+            print('k:'..k,v)
+        end
+    end  
+	xhr:registerScriptHandler(onReadyStateChange)
+    xhr:send()
+    xhr:send(json.encode(par))
+   
    
 end
 

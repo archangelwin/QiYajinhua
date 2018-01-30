@@ -1,6 +1,7 @@
 #pragma once
 #include "BaseServer.h"
 #include "TcpServer.h"
+#include "TimeServer.h"
 #include "RoomController.h"
 namespace Applications
 {

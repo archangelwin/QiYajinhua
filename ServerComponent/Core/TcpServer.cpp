@@ -4,6 +4,7 @@
 #include "HttpRequest_Parser.hpp"
 #include "HttpRequest.hpp"
 #include "Tool.hpp"
+#include "Log.h"
 #include <iostream>
 TcpServer::TcpServer(int Port):
 	Port_(Port)
@@ -122,7 +123,7 @@ void TcpServer::RecvData(boost::system::error_code ec, std::size_t bytes_transfe
 	{
 		std::tie(result, std::ignore) = request_parser_.parse(
 			request_, pData, pData + bytes_transferred);
-		if (result == request_parser::good)//½âÎöÇëÇó³É¹¦
+		if (result == request_parser::good)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½
 		{
 			 
 			TcpObserver_->OnHttpAccept(index, request_, HttpFilterJson(pData));
@@ -130,7 +131,7 @@ void TcpServer::RecvData(boost::system::error_code ec, std::size_t bytes_transfe
 			//this->DoRead(this->GetSocketItem(index)->GetPoint()->Sokcet(), index);
 
 		}
-		else if (result == request_parser::bad)//½âÎöÇëÇóÊ§°Ü
+		else if (result == request_parser::bad)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½
 		{
 			TcpObserver_->OnSocketRead(index, pData);
 			this->DoRead(this->GetSocketItem(index)->GetPoint()->Sokcet(), index);
@@ -147,6 +148,7 @@ void TcpServer::RecvData(boost::system::error_code ec, std::size_t bytes_transfe
 	{
 		std::cout << pData << std::endl;
 		std::cout << "boost error:" << ec.message() << std::endl;
+		Log::Error(pData);
 	}
  
 }

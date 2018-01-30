@@ -34,7 +34,7 @@
 *.pdb
 *.cache
 *.log
-
+/.vscode
 /ClientComponent/GameCore/jinhua/proj.win32/.vs/jinhua/v14
 /ClientComponent/GameCore/jinhua/proj.win32/Debug.win32
 /ServerComponent/Core/.vs/Core/v14
@@ -48,8 +48,11 @@
 /ServerComponent/CenterServer/x64/Release/CenterServer.tlog
 /ServerComponent/Core/x64/Release/Core.tlog
 /ServerComponent/Core/x64/Release
+/ServerComponent/Core/.vs
 /ServerComponent/RoomServer/.vs/RoomServer/v14
 /ServerComponent/RoomServer/x64/Release
 /ClientComponent/GameCore/jinhua/proj.android-studio/.idea
 /ClientComponent/GameCore/jinhua/cocos2d/cocos/platform/android/libcocos2dx/build
 /ClientComponent/GameCore/jinhua/cocos2d/cocos/platform/android/libcocos2dx
+/ClientComponent/GameCore/jinhua/cocos2d/cocos/scripting/lua-bindings/proj.win32/Debug.win32
+/ServerComponent/RoomServer/.vs
