@@ -1,15 +1,23 @@
 <html>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
+
 <body>
-<script type="text/javascript">
-$.ajax({
-	type: "POST",
-    url: "http://127.0.0.1:9090",
-    data: JSON.stringify({ x: 5 }),
-    dataType: "json"});
-</script>
+    <script type="text/javascript">
+        $.ajax({
+            type: "POST",
+            url: "http://127.0.0.1:9090",
+            data: JSON.stringify({
+                "MSG": "CreateID",
+                "DATA": {
+                    "ID": "yakir",
+                    "PS": "qq19980507"
+                },
+                "SUBCMD": null
+            }),
+            dataType: "json"
+        });
+    </script>
 
 </body>
-</html>
 
- 
+</html>

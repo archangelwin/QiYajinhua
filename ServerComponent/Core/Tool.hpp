@@ -9,4 +9,5 @@ std::string HttpFilterJson(std::string src)
 	std::string str = src.substr(pos+strlen("\r\n\r\n"), src.size());
 	return str;
 }
+ 
 #endif
